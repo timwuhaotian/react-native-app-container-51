@@ -34,14 +34,20 @@ The application is likely a minimal reproduce of the Twitter personal homepage, 
 * display home timeline of tweets
 * post a tweet
 * reply to a tweet
-* retweet a tweet
+* retweet a tweet (threading a tweet)
 * unretweet a tweet
 * star/favorite a tweet
 * unstar/favorite a tweet
 
-In development: <br>
+As I suppose threading a tweet is actuall retweet a tweet with comment etc... but it is not offered in Twitter APIs (or I didn't find it)
 
-* I have included gesture support for tweet item but not ready for the UI interactions yet when I am writting this <br>
+Still in development: <br>
+
+I have included gesture support for tweet item but not ready for the UI interactions yet when I am writting this: <br>
+
+* gesture response
+* remove a tweet
+* send tweet as a message
 
 Will update soon
 
