@@ -1,0 +1,7 @@
+export const ICON_REPLY = require('../assets/reply.png')
+export const ICON_REPLY_ACTIVE = require('../assets/reply-active.png')
+export const ICON_STAR = require('../assets/star.png')
+export const ICON_RETWEET = require('../assets/retweet.png')
+export const ICON_RETWEET_ACTIVE = require('../assets/retweet-active.png')
+export const ICON_STAR_ACTIVE = require('../assets/star-active.png')
+export const ICON_SHARE = require('../assets/share.png')
