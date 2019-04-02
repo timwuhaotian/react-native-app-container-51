@@ -1,68 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was meant to demonstrate a simple twitter user features with react-native also react application. 
 
-## Available Scripts
+**Usage**
 
-In the project directory, you can run:
+This project support both Native and Web<br>
+Clone and yarn:
 
-### `npm start`
+### `yarn`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For Native, we need to open up the xcode project (minimal with Expo) and simulator.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### `open ios/rndev.xcodeproj`
 
-### `npm test`
+To open the xcode project, and wait for it to load, and press build with iPhone 8. Then <br>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `yarn start_rn`
 
-### `npm run build`
+This will boot up the React Native local development service. When it is ready <br>
+Refresh the simulator with CMD + R or if it's not working, use Gesture in the simulator's menu to shake out the development menu.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For Web, we enter the following command:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### `yarn start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This will boot up the React web local development service in the Chrome at http://localhost:3000 <br>
+Just to mention, it takes a bit of time at its first run, and http does not support the Twitter API, <br>
+So currently it is just for demo :) I will try to put it onto https server
 
-### `npm run eject`
+**Features**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The application is likely a minimal reproduce of the Twitter personal homepage, it supports user to 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* auth with twitter (default with my own account info, you can login with other account and update the data)
+* display home timeline of tweets
+* post a tweet
+* reply to a tweet
+* retweet a tweet
+* unretweet a tweet
+* star/favorite a tweet
+* unstar/favorite a tweet
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+In development: <br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* I have included gesture support for tweet item but not ready for the UI interactions yet when I am writting this <br>
 
-## Learn More
+Will update soon
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Production Builds**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Native: <br>
+I wrote serveral scripts to split the common bundle of react-native and the specific business codes in dist folder <br>
+just to run
+### `yarn common_ios`
+to strip out react, react-native codes, and to run
+### `yarn bundle_ios`
+to strip out our business codes. android is the same way
 
-### Code Splitting
+Web: <br>
+For the web, it uses the original method of create-react-app but with some modification in the webpack configs. <br>
+just to run
+### `yarn build`
+to have the production build ready in build folder
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
