@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ActivityIndicator, Text, Alert, Image, View, AsyncStorage, FlatList, ScrollView, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native'
+import { ActivityIndicator, Text, Alert, RefreshControl, Image, View, AsyncStorage, FlatList, ScrollView, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native'
 import { TWLoginButton, decodeHTMLEntities } from 'react-native-simple-twitter'
 import moment from 'moment'
 import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures'
@@ -67,8 +67,10 @@ class HomeScreen extends Component<Props> {
   }
 
   fetchDefaultList = async () => {
+    this.props.store.showSpinner()
     let res = await this.props.twitter.get(GET_TIMELINE, {})
     res && this.props.store.updateTimeline(res)
+    this.props.store.hideSpinner()
   }
 
   onGetAccessToken = async ({ oauth_token: token, oauth_token_secret: tokenSecret }: any) => {
@@ -260,7 +262,15 @@ class HomeScreen extends Component<Props> {
             )
           })}
         </View> */}
-        <ScrollView style={{ marginBottom: 5 }}>
+        <ScrollView
+            horizontal={false}
+            refreshControl={(
+              <RefreshControl
+                onRefresh={this.fetchDefaultList}
+                refreshing={this.props.store.spinner}
+              ></RefreshControl>
+            )}
+            style={{ marginBottom: 5 }}>
         {timeline ? <FlatList
             data={timeline}
             renderItem={({ item }: any) => {
