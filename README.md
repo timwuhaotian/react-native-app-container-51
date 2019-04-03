@@ -16,7 +16,11 @@ To open the xcode project, and wait for it to load, and press build with iPhone 
 ### `yarn start_rn`
 
 This will boot up the React Native local development service. When it is ready <br>
-Refresh the simulator with CMD + R or if it's not working, use Gesture in the simulator's menu to shake out the development menu.
+Refresh the simulator with CMD + R or if it's not working, use Gesture in the simulator's menu to shake out the development menu.<br>
+If experience error like 'config.h is not found', try this following:
+
+### `rm -rf node_modules/ && yarn cache clean && yarn install`
+### `node_modules/react-native/scripts/ios-install-third-party.sh`
 
 For Web, we enter the following command:
 
