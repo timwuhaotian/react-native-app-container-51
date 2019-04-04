@@ -22,6 +22,8 @@ If experience error like 'config.h is not found', try this following:
 ### `rm -rf node_modules/ && yarn cache clean && yarn install`
 ### `node_modules/react-native/scripts/ios-install-third-party.sh`
 
+The reason is because that xcode 10.0 will have this problem, I was using 9.X version.
+
 For Web, we enter the following command:
 
 ### `yarn start`
