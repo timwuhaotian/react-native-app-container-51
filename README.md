@@ -17,12 +17,17 @@ To open the xcode project, and wait for it to load, and press build with iPhone 
 
 This will boot up the React Native local development service. When it is ready <br>
 Refresh the simulator with CMD + R or if it's not working, use Gesture in the simulator's menu to shake out the development menu.<br>
-If experience error like 'config.h is not found', try this following:
+If experience error like 'config.h is not found', try this following: <br>
+in project root directory:
 
 ### `rm -rf node_modules/ && yarn cache clean && yarn install`
 ### `node_modules/react-native/scripts/ios-install-third-party.sh`
+### `cd node_modules/react-native/third-party/glog-0.3.4`
+### `./configure`
+### `make`
+### `make install`
 
-The reason is because that xcode 10.0 will have this problem, I was using 9.X version.
+The reason is because that xcode 10+ will have this problem, I was using 9.X version.
 
 For Web, we enter the following command:
 
